@@ -15,16 +15,12 @@ let pages = [
 		title: "Home",
 		url: "/",
 	},
-	// {
-	// 	title: "Services",
-	// 	url: "/services",
-	// },
 	{
-		title: "Blog",
-		url: "/blog/",
+		title: "works",
+		url: "/works/",
 	},
 	{
-		title: t("contacts"),
+		title: t("contact"),
 		url: "/contact/",
 	},
 ];
@@ -212,7 +208,7 @@ const { pathname } = Astro.url;
 									</li>
 								))
 							}
-							<li>
+							<!-- <li>
 								<a href={translatePath(path, `${lang === "it" ? "en" : "it"}`)} class="inline-block cursor-pointer px-1 py-[0.33rem]">
 									<span class="menu-item-container inline-block">
 										<span
@@ -221,7 +217,7 @@ const { pathname } = Astro.url;
 										</span>
 									</span>
 								</a>
-							</li>
+							</li> -->
 						</ul>
 					</nav>
 				</div>

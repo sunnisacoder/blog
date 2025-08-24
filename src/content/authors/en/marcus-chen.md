@@ -1,5 +1,5 @@
 ---
-name: Marcus Chen
+name: Sunny Fan 
 description: "Award-winning Visual Effects Supervisor and 3D Artist specializing in immersive digital experiences and virtual production"
 image:
   source: "@assets/images/authors/mintaka.png"
