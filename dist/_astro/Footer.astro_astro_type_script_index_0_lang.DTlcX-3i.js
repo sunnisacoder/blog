@@ -1,0 +1,1 @@
+import{g as o}from"./index.BsLZEeKD.js";import{S as e}from"./ScrollToPlugin.D0CRiLCf.js";o.registerPlugin(e);function n(){var t=document.getElementById("go-top-button");t&&t.addEventListener("click",function(){o.to(window,{duration:.5,scrollTo:0})})}document.removeEventListener("DOMContentLoaded",n);document.addEventListener("DOMContentLoaded",n);
