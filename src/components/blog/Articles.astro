@@ -25,7 +25,7 @@ const allPosts = (await getCollection("posts"))
 ---
 
 <section>
-	<div class="top-[-10rem]transform-gpu absolute inset-x-0 overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
+	<div class="top-[-10rem] transform-gpu absolute inset-x-0 overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
 		<div class="gradient-element"></div>
 	</div>
 	<div class="mx-auto flex flex-col gap-16 px-8 py-24 md:px-12 lg:pt-32 2xl:max-w-7xl">
@@ -35,37 +35,22 @@ const allPosts = (await getCollection("posts"))
 				<feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"></feTurbulence>
 			</filter>
 		</svg>
+		
 		<Title title={t("blog.title")} subtitle={t("blog.subtitle")} class="pb-10 pt-20 uppercase" />
-		{
-			allPosts && allPosts[0] && (
-				<Entry
-					url={"/blog/" + allPosts[0].slug}
-					title={allPosts[0].data.title}
-					description={allPosts[0].data.description}
-					alt={allPosts[0].data.title}
-					pubDate={allPosts[0].data.pubDate.toString().slice(0, 10)}
-					author={allPosts[0].data.author}
-					image={allPosts[0].data.image.source}
-					titleInside={false}
-				/>
-			)
-		}
 
 		<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
 			{
-				allPosts
-					.slice(1)
-					.map((post) => (
-						<Entry
-							url={"/blog/" + post.slug}
-							title={post.data.title}
-							description={post.data.description}
-							alt={post.data.title}
-							pubDate={post.data.pubDate.toString().slice(0, 10)}
-							author={post.data.author}
-							image={post.data.image.source}
-						/>
-					))
+				allPosts && allPosts.map((post) => (
+					<Entry
+						url={"/blog/" + post.slug}
+						title={post.data.title}
+						description={post.data.description}
+						alt={post.data.title}
+						pubDate={post.data.pubDate.toString().slice(0, 10)}
+						author={post.data.author}
+						image={post.data.image.source}
+					/>
+				))
 			}
 		</div>
 	</div>

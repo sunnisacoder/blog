@@ -1,20 +1,34 @@
 ---
 import Title from "@components/global/Title.astro";
 
-import { getLangFromUrl, useTranslations, useTranslatedPath } from "@i18n/utils";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
+// const translatePath = useTranslatedPath(lang);
 ---
 
 <section class="isolate px-6 py-24 sm:py-32 lg:px-8">
 	<div class="absolute inset-x-0 top-[-10rem] transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
 		<div class="gradient-element"></div>
 	</div>
-	<div class="mx-auto">
+	<div class="mx-auto bg-gray-200 rounded-2xl">
 		<Title class="pb-10 pt-20 uppercase" title={t("contact.title")} subtitle={t("contact.subtitle")} />
-		<form data-static-form-name="contact" class="mx-auto max-w-2xl pt-12 lg:pt-20">
+		<div class="flex gap-4 md:justify-center pt-10 pb-10">
+			<div class="squircle-bg rounded-lg bg-zinc-900">
+				<a href="mailto:sunnisacoder@gmail.com"
+					class="flex h-10 w-full max-w-52 flex-1 items-center justify-center px-4 py-2 text-l uppercase text-slate-200 transition-all hover:text-white sm:w-auto md:font-bold lg:h-10">
+					send me an email
+				</a>
+			</div>
+			<div class="squircle-bg rounded-lg bg-zinc-900">
+				<a href="https://www.cake.me/s--nhlzTMUkyVt4jZxloSzhNw--/funsunny1107" target="_blank"
+					class="flex h-10 w-full max-w-52 flex-1 items-center justify-center px-4 py-2 text-l uppercase text-slate-200 transition-all hover:text-white sm:w-auto md:font-bold lg:h-10">
+					check my resume
+				</a>
+			</div>
+		</div>
+		<!-- <form data-static-form-name="contact" class="mx-auto max-w-2xl pt-12 lg:pt-20">
 			<div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 				<div class="form-field sm:col-span-2">
 					<label for="name" class="form-label">{t("contact.name")}*</label>
@@ -24,20 +38,20 @@ const translatePath = useTranslatedPath(lang);
 					<label for="email" class="form-label">{t("contact.email")}*</label>
 					<input type="email" name="email" id="email" autocomplete="email" required />
 				</div>
-				<!-- <div class="form-field sm:col-span-2">
+				<div class="form-field sm:col-span-2">
 					<label for="company" class="form-label">{t("contact.company")}</label>
 					<input type="text" name="company" id="company" autocomplete="organization" />
-				</div> -->
+				</div>
 				<div class="form-field sm:col-span-2">
 					<label for="message" class="form-label">{t("contact.message")}*</label>
 					<textarea name="message" id="message" rows="4" required></textarea>
 				</div>
-				<!-- <div class="flex gap-x-4 sm:col-span-2">
+				<div class="flex gap-x-4 sm:col-span-2">
 					<label class="text-sm leading-6 text-gray-600" id="switch-1-label">
 						{t("contact.agree")}
 						<a href="/privacy" class="font-semibold text-slate-800">privacy policy</a>.
 					</label>
-				</div> -->
+				</div>
 			</div>
 			<div class="flex justify-end pt-10 ">
 				<div class="squircle-bg rounded-lg bg-zinc-900">
@@ -48,7 +62,7 @@ const translatePath = useTranslatedPath(lang);
 					</button>
 				</div>
 			</div>
-		</form>
+		</form> -->
 	</div>
 </section>
 

@@ -199,9 +199,8 @@ const faqs = [
 <script>
 	import { gsap } from "gsap";
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
-	import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 
-	gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
+	gsap.registerPlugin(ScrollTrigger);
 
 	function init() {
 		gsap.to("#faq", {

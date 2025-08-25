@@ -12,6 +12,11 @@ export default defineConfig({
 				usePolling: true,
 			},
 		},
+		resolve: {
+			alias: {
+				'@assets': '/src/assets'
+			}
+		}
 	},
 	site: "https://mintaka.co",
 	i18n: {

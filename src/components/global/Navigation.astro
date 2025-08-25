@@ -16,12 +16,16 @@ let pages = [
 		url: "/",
 	},
 	{
-		title: "works",
-		url: "/works/",
+		title: "Blog",
+		url: "/blog/",
 	},
 	{
 		title: t("contact"),
 		url: "/contact/",
+	},
+	{
+		title: "CV",
+		url: "https://www.cake.me/s--nhlzTMUkyVt4jZxloSzhNw--/funsunny1107", 
 	},
 ];
 
@@ -191,11 +195,13 @@ const { pathname } = Astro.url;
 								pages.map((page) => (
 									<li data-cursor-hover>
 										<a
-											href={translatePath(page.url)}
+											href={page.url.startsWith('http') ? page.url : translatePath(page.url)}
+											target={page.url.startsWith('http') ? "_blank" : undefined}
+											rel={page.url.startsWith('http') ? "noopener noreferrer" : undefined}
 											class={`inline-block cursor-pointer px-1 py-[0.33rem] ${
 												page.url === pathname ||
 												page.url === pathname.replace(/^\/it|\/$/, "") ||
-												(page.url === "/blog" && (pathname.startsWith("/blog") || pathname.startsWith("/it/blog")))
+												(page.url === "/works" && (pathname.startsWith("/works") || pathname.startsWith("/it/works")))
 													? "active"
 													: ""
 											}`}>
