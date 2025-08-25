@@ -6,17 +6,18 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
-const { title, url, author, pubDate, description, image, titleInside = false } = Astro.props;
+const { title, url, author, pubDate, description, image, titleInside, openLink } = Astro.props;
 ---
 
-<a href={translatePath(url)} title={title} class="group">
+<!-- <a href={translatePath(url)} title={title} class="group"> -->
+<a href={openLink || translatePath(url)} target={openLink ? "_blank" : "_self"} class="group" title={title}>
 	<article class="relative flex h-full flex-1 flex-col overflow-hidden rounded-lg">
 		<div
 			class:list={[
 				"article-overlay relative block w-full overflow-hidden lg:col-span-2",
 				titleInside ? "article-gradient-overlay-bottom" : "article-gradient-overlay",
 			]}>
-			<Image class="relative aspect-[384/246] h-full w-full bg-center object-cover" src={image} alt={title} />
+			<Image class="relative aspect-[467/250] h-full w-full bg-center object-cover" src={image} alt={title} />
 		</div>
 		<div
 			class={`flex w-full flex-1 flex-col items-start justify-between  ${

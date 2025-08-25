@@ -64,6 +64,9 @@
             "type": "string"
           }
         },
+        "openLink": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }

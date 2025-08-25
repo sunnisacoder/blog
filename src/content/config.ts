@@ -16,6 +16,7 @@ const postsCollection = defineCollection({
 			}),
 
 			tags: z.array(z.string()),
+			openLink: z.string().optional(),
 		}),
 });
 

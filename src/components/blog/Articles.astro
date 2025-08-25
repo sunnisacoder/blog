@@ -49,6 +49,7 @@ const allPosts = (await getCollection("posts"))
 						pubDate={post.data.pubDate.toString().slice(0, 10)}
 						author={post.data.author}
 						image={post.data.image.source}
+						openLink={post.data.openLink}
 					/>
 				))
 			}

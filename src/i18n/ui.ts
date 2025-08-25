@@ -73,7 +73,7 @@ export const ui = {
 		"thanks.title": "Thank you",
 		"thanks.content": "We will get back to you as soon as possible",
 		"contact.title": "Contact",
-		"contact.subtitle": "請寄送信件至我的工作信箱 sunnisacoder@gmail.com",
+		"contact.subtitle": "欲聯繫，請寄送信件至我的信箱 sunnisacoder@gmail.com",
 		"contact.name": "Name",
 		"contact.email": "Email",
 		"contact.message": "Message",
