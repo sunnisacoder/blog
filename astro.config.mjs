@@ -22,7 +22,7 @@ export default defineConfig({
 			}
 		}
 	},
-	site: "https://mintaka.co",
+	site: "https://sunnisacoder.github.io",
 	i18n: {
 		defaultLocale: "en",
 		locales: ["en", "it"],
@@ -32,11 +32,6 @@ export default defineConfig({
 		shikiConfig: {
 			theme: "css-variables",
 		},
-	},
-	shikiConfig: {
-		wrap: true,
-		skipInline: false,
-		drafts: true,
 	},
 	integrations: [
 		tailwind({
