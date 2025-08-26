@@ -1,0 +1,47 @@
+<div class="loading-container bg-white flex justify-center items-center fixed z-100 top-0 left-0 w-full h-full" id="loading-container">
+	<div class="loading-spinner flex gap-2">
+		<div class="dot w-[12px] h-[12px] bg-black rounded-full"></div>
+		<div class="dot w-[12px] h-[12px] bg-black rounded-full"></div>
+		<div class="dot w-[12px] h-[12px] bg-black rounded-full"></div>
+        <picture>
+            <img src="@assets/images/fan-192x192.png" alt="loading">
+        </picture>
+	</div>
+</div>
+
+<style>
+	.dot {
+		animation: bounce 0.5s ease-in-out infinite;
+	}
+
+	.dot:nth-child(2) {
+		animation-delay: 0.1s;
+	}
+
+	.dot:nth-child(3) {
+		animation-delay: 0.2s;
+	}
+
+	@keyframes bounce {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-15px);
+		}
+	}
+</style>
+
+<script>
+	import { isLoading } from "../../store/loadingStore";
+
+	const loadingContainer = document.getElementById("loading-container");
+	if (loadingContainer) {
+		loadingContainer.style.display = "none";
+
+		isLoading.subscribe((value: boolean) => {
+			loadingContainer.style.display = value ? "flex" : "none";
+		});
+	}
+</script>
